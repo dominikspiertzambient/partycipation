@@ -1,0 +1,12 @@
+
+
+.title{
+    padding: 5%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(100,149,237,1) 0%, rgba(1,163,157,1) 100%);
+    color: white;
+}
+
+.toolbar {
+    padding:5%;
+    background-color: #01A39D;
+}

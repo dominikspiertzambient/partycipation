@@ -7,7 +7,7 @@ export const Home: FC = () => ( // return
     <IonPage>
         <IonHeader>
             <IonToolbar>
-                <IonTitle>sst</IonTitle>
+                <IonTitle className="title">Eventübersicht</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
@@ -19,8 +19,11 @@ export const Home: FC = () => ( // return
                 </a>{' '}
                 will be your guide.
             </p>
+
+
             <Card />
             <Card />
         </IonContent>
+        <IonToolbar className="toolbar"><p>test</p></IonToolbar>
     </IonPage>
 );

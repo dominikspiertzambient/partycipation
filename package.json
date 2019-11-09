@@ -1,0 +1,9 @@
+{
+  "name": "partycipation",
+  "version": "1.0.0",
+  "description": "ionic app for event handling",
+  "repository": "https://github.com/dominikspiertzambient/partycipation",
+  "author": "Dominik Spiertz <dominik.spiertz@ambient-innovation.com>",
+  "license": "UNLICENSED",
+  "private": true
+}

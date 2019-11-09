@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import {Home} from './pages/Home';
 import evdet from './pages/Eventdetails';
 import teil from './pages/Teilnehmer';
 import list from './pages/Mitbringliste';
@@ -34,7 +34,7 @@ const App: React.FC = () => (
         <Route path="/home" component={Home} exact={true} />
         <Route path="/teil" component={teil} exact={true} />
         <Route path="/evdet" component={evdet} exact={true} />
-          <Route path="/list" component={list} exact={true} />
+        <Route path="/list" component={list} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>

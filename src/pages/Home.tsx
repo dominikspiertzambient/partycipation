@@ -5,7 +5,7 @@ export const Home: FC = () => ( // return
     <IonPage>
         <IonHeader>
             <IonToolbar>
-                <IonTitle>pfffff</IonTitle>
+                <IonTitle>sst</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">

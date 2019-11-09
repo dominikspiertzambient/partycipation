@@ -1,6 +1,7 @@
 import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, {FC} from 'react';
 import "./Home.css"
+import {Card} from "./Card/Card";
 
 export const Home: FC = () => ( // return
     <IonPage>
@@ -18,6 +19,8 @@ export const Home: FC = () => ( // return
                 </a>{' '}
                 will be your guide.
             </p>
+            <Card />
+            <Card />
         </IonContent>
     </IonPage>
 );

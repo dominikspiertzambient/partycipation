@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "city": "Köln",
+      "date": "01.12.2019 18:00",
+      "participants": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "city": "Bonn",
+      "date": "03.12.2019 18:30",
+      "participants": [3]
+    },
+    {
+      "id": 3,
+      "city": "Düsseldorf",
+      "date": "04.12.2019 22:15",
+      "participants": [2, 3]
+    }
+  ],
+  "participants": [
+    {
+      "id": 1,
+      "name": "Dominik"
+    },
+    {
+      "id": 2,
+      "name": "Markus"
+    },
+    {
+      "id": 3,
+      "name": "Jane"
+    }
+  ]
+}

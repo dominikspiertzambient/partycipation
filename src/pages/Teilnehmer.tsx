@@ -20,7 +20,7 @@ import {
 import React from 'react';
 import {Route} from "react-router";
 
-const teil: React.FC = () => {
+export const Teil: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -99,5 +99,3 @@ const teil: React.FC = () => {
         </IonPage>
     );
 };
-
-export default teil;

@@ -1,7 +1,7 @@
 import {
     IonAvatar,
     IonBadge,
-    IonButton, IonChip,
+    IonButton, IonCard, IonChip,
     IonCol,
     IonContent,
     IonGrid,
@@ -17,11 +17,15 @@ import {
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
-import React from 'react';
+import React, {useContext} from 'react';
 
 import {Route} from "react-router";
+import {StorageContext} from "../provider/Storage/Storage";
 
-const list: React.FC = () => {
+export const List: React.FC = () => {
+
+    const {items} = useContext(StorageContext);
+
     return (
         <IonPage>
             <IonHeader>
@@ -37,6 +41,18 @@ const list: React.FC = () => {
                             <IonLabel>wird mehr gebraucht</IonLabel>
                         </IonChip>
                     </IonItem>
+
+                    <div>
+                        {items && items.length > 0 && items.map(
+                            (item: any) => (
+                                <IonItem key={item.id}>
+                                    <p>{item.amount}</p>
+                                    <p> x</p>
+                                    <p>{item.name}</p>
+                                </IonItem>
+                            )
+                        )}
+                    </div>
                 </IonList>
             </IonContent>
 
@@ -72,4 +88,3 @@ const list: React.FC = () => {
     );
 };
 
-export default list;

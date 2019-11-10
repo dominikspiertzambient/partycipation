@@ -1,6 +1,6 @@
 import {
     IonBadge,
-    IonButton,
+    IonButton, IonCard,
     IonCol,
     IonContent,
     IonGrid,
@@ -9,17 +9,20 @@ import {
     IonLabel,
     IonPage,
     IonRouterOutlet,
-    IonRow, IonTab,
+    IonRow,
     IonTabBar,
     IonTabButton,
     IonTabs,
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
-import React from 'react';
-import {Route} from "react-router";
+import React, {FC, useContext} from 'react';
+import {StorageContext} from "../provider/Storage/Storage";
 
-const evdet: React.FC = () => {
+export const Evdet: FC = () => {
+
+    const {events} = useContext(StorageContext);
+
     return (
         <IonPage>
             <IonHeader>
@@ -28,10 +31,22 @@ const evdet: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
+                <div>
+                    {events && events.length > 0 && events.map(
+                        (event: any) => (
+                            <IonCard key={1}>
+                                <p>{event.date}</p>
+                                <p>{event.city}</p>
+                            </IonCard>
+                        )
+                    )}
+                </div>
                 <IonGrid>
                     <IonRow>
                         <IonCol>Ort:</IonCol>
-                        <IonCol>Zülpi</IonCol>
+                        <IonCol>
+                            {events && events[0].city as any}
+                        </IonCol>
                     </IonRow>
 
                     <IonRow>
@@ -76,7 +91,5 @@ const evdet: React.FC = () => {
 
             </IonContent>
         </IonPage>
-    );
+    )
 };
-
-export default evdet;

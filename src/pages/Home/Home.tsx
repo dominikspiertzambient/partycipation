@@ -1,7 +1,8 @@
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, {FC} from 'react';
 import "./Home.css"
 import {Card} from "./Card/Card";
+
 
 export const Home: FC = () => ( // return
     <IonPage>
@@ -24,6 +25,6 @@ export const Home: FC = () => ( // return
             <Card />
             <Card />
         </IonContent>
-        <IonToolbar className="toolbar"><p>test</p></IonToolbar>
+        <IonFooter className="toolbar"><p>test</p></IonFooter>
     </IonPage>
 );

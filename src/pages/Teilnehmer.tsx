@@ -1,26 +1,30 @@
 import {
     IonAvatar,
     IonBadge,
-    IonButton, IonChip,
-    IonCol,
+    IonChip,
     IonContent,
-    IonGrid,
     IonHeader,
-    IonIcon, IonItem,
-    IonLabel, IonList,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
     IonPage,
     IonRouterOutlet,
-    IonRow, IonTab,
     IonTabBar,
     IonTabButton,
     IonTabs,
     IonTitle,
     IonToolbar,
 } from '@ionic/react';
-import React from 'react';
-import {Route} from "react-router";
+import React, {FC, useContext} from 'react';
+import {RouteComponentProps, withRouter} from "react-router";
+import {StorageContext} from "../provider/Storage/Storage";
 
-export const Teil: React.FC = () => {
+export const Teil_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
+
+    const {events, participants} = useContext(StorageContext);
+    const event: any = events.find((findEvent: any) => findEvent.id.toString() === params.id);
+
     return (
         <IonPage>
             <IonHeader>
@@ -30,41 +34,27 @@ export const Teil: React.FC = () => {
             </IonHeader>
             <IonContent className="ion-padding">
                 <IonList>
-                    <IonItem>
-                        <IonAvatar slot={"start"}><img src="https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" /></IonAvatar>
-                        <IonLabel>Pikachus</IonLabel>
-                        <IonChip color="success">
-                            <IonLabel>nimmt teil</IonLabel>
-                        </IonChip>
-                    </IonItem>
-                    <IonItem>
-                        <IonAvatar slot={"start"}><img src="https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" /></IonAvatar>
-                        <IonLabel>Thor</IonLabel>
-                        <IonChip color="warning">
-                            <IonLabel>weiß noch nicht</IonLabel>
-                        </IonChip>
-                    </IonItem>
-                    <IonItem>
-                        <IonAvatar slot={"start"}><img src="https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" /></IonAvatar>
-                        <IonLabel>Tony Start</IonLabel>
-                        <IonChip color="success">
-                            <IonLabel>nimmt teil</IonLabel>
-                        </IonChip>
-                    </IonItem>
-                    <IonItem>
-                        <IonAvatar slot={"start"}><img src="https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" /></IonAvatar>
-                        <IonLabel>Pac-Man</IonLabel>
-                        <IonChip color="danger">
-                            <IonLabel>nimmt nicht teil</IonLabel>
-                        </IonChip>
-                    </IonItem>
-                    <IonItem>
-                        <IonAvatar slot={"start"}><img src="https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg" /></IonAvatar>
-                        <IonLabel>Super Mario</IonLabel>
-                        <IonChip color="warning">
-                            <IonLabel>weiß noch nicht</IonLabel>
-                        </IonChip>
-                    </IonItem>
+
+                    <div>
+                        {event.participants && event.participants.length > 0 && event.participants.map((participant: any) => {
+                                console.log(participant);
+                                const partyParticipant: any = participants.find((findP: any) => findP.id === participant);
+
+                                return (
+                                    <IonItem key={participant}>
+                                        <IonAvatar slot={"start"}><img
+                                            src="https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg"/></IonAvatar>
+                                        <IonLabel>
+                                            {partyParticipant.name}
+                                        </IonLabel>
+                                        <IonChip color="success">
+                                            <IonLabel>nimmt teil</IonLabel>
+                                        </IonChip>
+                                    </IonItem>
+                                )
+                            }
+                        )}
+                    </div>
                 </IonList>
             </IonContent>
 
@@ -81,7 +71,7 @@ export const Teil: React.FC = () => {
                         <IonLabel>Ort & Zeit</IonLabel>
                     </IonTabButton>
 
-                    <IonTabButton tab="Teilnehmer" href="/teil">
+                    <IonTabButton tab="Teilnehmer" href="details/participants">
                         <IonIcon name="person"/>
                         <IonLabel>Teilnehmer</IonLabel>
                     </IonTabButton>
@@ -99,3 +89,6 @@ export const Teil: React.FC = () => {
         </IonPage>
     );
 };
+
+
+export const Teil = withRouter(Teil_);

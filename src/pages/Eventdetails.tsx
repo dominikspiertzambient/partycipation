@@ -37,18 +37,18 @@ const Evdet_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
                     <IonRow>
                         <IonCol>Ort:</IonCol>
                         <IonCol>
-                           test
+                            {event.city ? event.city : 'muss noch abgestimmt werden'}
                         </IonCol>
                     </IonRow>
 
                     <IonRow>
                         <IonCol>Zeit:</IonCol>
-                        <IonCol>11-23Uhr</IonCol>
+                        <IonCol>{event.time ? event.time : 'muss noch abgestimmt werden'}</IonCol>
                     </IonRow>
 
                     <IonRow>
                         <IonCol>Datum:</IonCol>
-                        <IonCol>11.11.2019</IonCol>
+                        <IonCol>{event.date ? event.date : 'muss noch abgestimmt werden'}</IonCol>
                     </IonRow>
 
                     <IonButton color="warning" expand="block">Abstimmung</IonButton>
@@ -66,7 +66,7 @@ const Evdet_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
                             <IonLabel>Ort & Zeit</IonLabel>
                         </IonTabButton>
 
-                        <IonTabButton tab="Teilnehmer" href="/teil">
+                        <IonTabButton tab="Teilnehmer" href="details/participants">
                             <IonIcon name="person"/>
                             <IonLabel>Teilnehmer</IonLabel>
                         </IonTabButton>

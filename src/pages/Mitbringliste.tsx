@@ -64,12 +64,12 @@ export const List: React.FC = () => {
 
                 <IonTabBar slot="bottom">
 
-                    <IonTabButton tab="Ort und Zeit" href="/evdet">
+                    <IonTabButton tab="Ort und Zeit" href="details">
                         <IonIcon name="time"/>
                         <IonLabel>Ort & Zeit</IonLabel>
                     </IonTabButton>
 
-                    <IonTabButton tab="Teilnehmer" href="/teil">
+                    <IonTabButton tab="Teilnehmer" href="details/participants">
                         <IonIcon name="person"/>
                         <IonLabel>Teilnehmer</IonLabel>
                     </IonTabButton>

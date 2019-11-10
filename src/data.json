@@ -4,23 +4,34 @@
       "id": 1,
       "city": "Köln",
       "name": "Party bei Ambient",
-      "date": "01.12.2019 18:00",
+      "date": "01.12.2019",
+      "time": "18:00",
       "participants": [1, 2, 3],
       "items": [1]
     },
     {
       "id": 2,
+      "city": "Köln",
+      "name": "Karneval",
+      "date": "11.11.2019",
+      "time": "11:11",
+      "participants": [1, 2, 3],
+      "items": [1]
+    },
+    {
+      "id": 3,
       "city": "Bonn",
       "name": "Keine Party bei Ambient",
-      "date": "03.12.2019 18:30",
+      "date": "03.12.2019",
+      "time": "18:30",
       "participants": [3],
       "items": [2, 3]
     },
     {
-      "id": 3,
-      "city": "Düsseldorf",
+      "id": 4,
       "name": "Kein Karneval",
-      "date": "04.12.2019 22:15",
+      "date": "04.12.2019",
+      "time": "22:15",
       "participants": [2, 3],
       "items": [3]
     }

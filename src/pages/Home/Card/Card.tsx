@@ -1,11 +1,13 @@
 import React, {FC} from 'react';
-import './Card.css';
-import {IonCard, IonCardSubtitle, IonCardTitle, IonImg} from '@ionic/react';
+
+import {IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonImg} from '@ionic/react';
 
 export const Card: FC<any> = (props) => (
-    <IonCard className="box">
-        <IonImg className="bild1" src={props.src} />
-        <IonCardTitle>{props.title}</IonCardTitle>
-        <IonCardSubtitle>{props.date}</IonCardSubtitle>
+    <IonCard className="box" onClick={props.onClick}>
+        <img className="bild1" src={props.src} alt='card' />
+        <IonCardContent>
+          <IonCardTitle>{props.title}</IonCardTitle>
+          <IonCardSubtitle>{props.date}</IonCardSubtitle>
+        </IonCardContent>
     </IonCard>
 );

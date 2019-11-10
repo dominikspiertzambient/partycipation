@@ -1,0 +1,81 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "city": "Köln",
+      "date": "01.12.2019 18:00",
+      "participants": [1, 2, 3],
+      "items": [1]
+    },
+    {
+      "id": 2,
+      "city": "Bonn",
+      "date": "03.12.2019 18:30",
+      "participants": [3],
+      "items": [2, 3]
+    },
+    {
+      "id": 3,
+      "city": "Düsseldorf",
+      "date": "04.12.2019 22:15",
+      "participants": [2, 3],
+      "items": [3]
+    }
+  ],
+  "participants": [
+    {
+      "id": 1,
+      "name": "Dominik"
+    },
+    {
+      "id": 2,
+      "name": "Markus"
+    },
+    {
+      "id": 3,
+      "name": "Jane"
+    },
+    {
+      "id": 4,
+      "name": "Kerem"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "amount": 2,
+      "provider": 4
+    },
+    {
+      "id": 2,
+      "name": "Chips & Cola",
+      "amount": 5,
+      "provider": null
+    },
+    {
+      "id": 3,
+      "name": "Looping Louie Brettspiel",
+      "amount": 1,
+      "provider": null
+    },
+        {
+      "id": 4,
+      "name": "Bier",
+      "amount": 6,
+      "provider": 1
+    },
+    {
+      "id": 5,
+      "name": "Musikbox",
+      "amount": 1,
+      "provider": 3
+    },
+    {
+      "id": 6,
+      "name": "Schokolade",
+      "amount": 4,
+      "provider": null
+    }
+  ]
+}

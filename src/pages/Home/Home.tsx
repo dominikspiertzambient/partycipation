@@ -1,7 +1,7 @@
 import {IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, {FC} from 'react';
 import "./Home.css"
-import {Card} from "./Card/Card";
+import Card from "./Card/Card";
 
 
 export const Home: FC = () => ( // return
@@ -22,7 +22,7 @@ export const Home: FC = () => ( // return
             </p>
 
 
-            <Card />
+            <Card  src title="Code + Design Camp" date="Samstag, 09.11.2019"  />
             <Card />
         </IonContent>
         <IonFooter className="toolbar"><p>test</p></IonFooter>

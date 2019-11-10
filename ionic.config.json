@@ -1,5 +1,6 @@
 {
   "name": "partycipation",
   "integrations": {},
-  "type": "react"
+  "type": "react",
+  "app_id": "design.code.partycipation"
 }

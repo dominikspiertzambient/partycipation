@@ -1,29 +1,27 @@
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
-import React, {FC} from 'react';
-import "./Home.css"
-import {Card} from "./Card/Card";
+import {IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import React, {FC, useContext} from 'react';
+import {StorageContext} from '../../provider/Storage/Storage';
+import {Card} from './Card/Card';
+import src from '../../img/Download.jpg';
+import {RouteComponentProps, withRouter} from 'react-router';
 
-export const Home: FC = () => ( // return
+const _Home: FC<RouteComponentProps> = ({history}) => {
+  const {events} = useContext(StorageContext);
+
+  return ( // return
     <IonPage>
-        <IonHeader>
-            <IonToolbar>
-                <IonTitle className="title">Eventübersicht</IonTitle>
-            </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">
-            The world is your oyster.
-            <p>
-                If you get lost, the{' '}
-                <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/">
-                    docs
-                </a>{' '}
-                will be your guide.
-            </p>
-
-
-            <Card />
-            <Card />
-        </IonContent>
-        <IonToolbar className="toolbar"><p>test</p></IonToolbar>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle className="title">Eventübersicht</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+          {events && events.length > 0 && events.map(
+            (event: any) => <Card onClick={() => history.push(`/events/${event.id}/details`)} key={event.id} title={event.name} date={event.date} src={src} />
+          )}
+      </IonContent>
     </IonPage>
-);
+  );
+};
+
+export const Home = withRouter(_Home);

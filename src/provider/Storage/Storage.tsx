@@ -4,11 +4,11 @@ import jsonData from '../../data.json';
 
 export const StorageContext = createContext({
   events: [],
-  setEvents: () => undefined,
+  setEvents: (_args: any) => undefined,
   participants: [],
-  setParticipants: () => undefined,
+  setParticipants: (_args: any) => undefined,
   items: [],
-  setItems: () => undefined,
+  setItems: (_args: any) => undefined,
 });
 
 export const StorageProvider: FC = ({ children }) => {

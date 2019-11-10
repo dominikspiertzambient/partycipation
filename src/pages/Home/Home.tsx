@@ -1,10 +1,10 @@
-import {IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, {FC} from 'react';
-import "./Home.css"
-import Card from "./Card/Card";
 
+export const Home: FC = () => {
+  const {participants, events, items} = useContext(StorageContext);
 
-export const Home: FC = () => ( // return
+  return ( // return
     <IonPage>
         <IonHeader>
             <IonToolbar>
@@ -20,11 +20,25 @@ export const Home: FC = () => ( // return
                 </a>{' '}
                 will be your guide.
             </p>
-
-
-            <Card  src title="Code + Design Camp" date="Samstag, 09.11.2019"  />
-            <Card />
+          {participants && participants.length > 0 && participants.map(
+            (participant: any) => <p key={participant.id}>{participant.name}</p>
+          )}
+          <div>
+          {events && events.length > 0 && events.map(
+            (event: any) => (
+              <IonCard key={event.id}>
+                <p>{event.date}</p>
+                <p>{event.city}</p>
+              </IonCard>
+            )
+          )}
+          </div>
+          <div>
+          {items && items.length > 0 && items.map(
+            (item: any) => <p key={item.id}>{item.name}</p>
+          )}
+          </div>
         </IonContent>
-        <IonFooter className="toolbar"><p>test</p></IonFooter>
+       <IonFooter className="toolbar"><p>test</p></IonFooter>
     </IonPage>
 );

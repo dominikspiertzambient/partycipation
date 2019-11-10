@@ -1,6 +1,6 @@
 import {
     IonBadge,
-    IonButton, IonCard,
+    IonButton,
     IonCol,
     IonContent,
     IonGrid,
@@ -17,35 +17,27 @@ import {
     IonToolbar,
 } from '@ionic/react';
 import React, {FC, useContext} from 'react';
-import {StorageContext} from "../provider/Storage/Storage";
+import {StorageContext} from '../provider/Storage/Storage';
+import {RouteComponentProps, withRouter} from 'react-router';
 
-export const Evdet: FC = () => {
-
+const Evdet_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
     const {events} = useContext(StorageContext);
+    const event: any = events.find((findEvent: any) => findEvent.id.toString() === params.id);
 
     return (
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Karnevalsparty</IonTitle>
+                    <IonTitle>{event ? event.name : 'Event nicht gefunden'}</IonTitle>
                 </IonToolbar>
             </IonHeader>
+            {event && (
             <IonContent className="ion-padding">
-                <div>
-                    {events && events.length > 0 && events.map(
-                        (event: any) => (
-                            <IonCard key={1}>
-                                <p>{event.date}</p>
-                                <p>{event.city}</p>
-                            </IonCard>
-                        )
-                    )}
-                </div>
                 <IonGrid>
                     <IonRow>
                         <IonCol>Ort:</IonCol>
                         <IonCol>
-                            {events && events[0].city as any}
+                           test
                         </IonCol>
                     </IonRow>
 
@@ -84,12 +76,12 @@ export const Evdet: FC = () => {
                             <IonLabel>Liste</IonLabel>
                             <IonBadge>6</IonBadge>
                         </IonTabButton>
-
                     </IonTabBar>
-
                 </IonTabs>
-
             </IonContent>
+              )}
         </IonPage>
     )
 };
+
+export const Evdet = withRouter(Evdet_);

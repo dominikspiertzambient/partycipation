@@ -1,9 +1,9 @@
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {IonCard, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, {FC, useContext} from 'react';
 import {StorageContext} from '../provider/Storage/Storage';
 
 export const Home: FC = () => {
-  const {participants} = useContext(StorageContext);
+  const {participants, events, items} = useContext(StorageContext);
 
   return ( // return
     <IonPage>
@@ -24,6 +24,21 @@ export const Home: FC = () => {
           {participants && participants.length > 0 && participants.map(
             (participant: any) => <p key={participant.id}>{participant.name}</p>
           )}
+          <div>
+          {events && events.length > 0 && events.map(
+            (event: any) => (
+              <IonCard key={event.id}>
+                <p>{event.date}</p>
+                <p>{event.city}</p>
+              </IonCard>
+            )
+          )}
+          </div>
+          <div>
+          {items && items.length > 0 && items.map(
+            (item: any) => <p key={item.id}>{item.name}</p>
+          )}
+          </div>
         </IonContent>
     </IonPage>
   )

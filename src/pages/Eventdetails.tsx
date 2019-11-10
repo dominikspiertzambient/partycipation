@@ -31,7 +31,7 @@ const evdet: React.FC = () => {
                 <IonGrid>
                     <IonRow>
                         <IonCol>Ort:</IonCol>
-                        <IonCol>Zülpicher Str.</IonCol>
+                        <IonCol>Zülpi</IonCol>
                     </IonRow>
 
                     <IonRow>

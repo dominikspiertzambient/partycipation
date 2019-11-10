@@ -1,12 +1,13 @@
 import {
+    IonAvatar,
     IonBadge,
-    IonButton,
+    IonButton, IonChip,
     IonCol,
     IonContent,
     IonGrid,
     IonHeader,
-    IonIcon,
-    IonLabel,
+    IonIcon, IonItem,
+    IonLabel, IonList,
     IonPage,
     IonRouterOutlet,
     IonRow, IonTab,
@@ -17,7 +18,7 @@ import {
     IonToolbar,
 } from '@ionic/react';
 import React from 'react';
-import Home from "./Home";
+
 import {Route} from "react-router";
 
 const list: React.FC = () => {
@@ -29,8 +30,16 @@ const list: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
-                LOLOLOL
+                <IonList>
+                    <IonItem>
+                        <IonLabel>Bier</IonLabel>
+                        <IonChip color="warning">
+                            <IonLabel>wird mehr gebraucht</IonLabel>
+                        </IonChip>
+                    </IonItem>
+                </IonList>
             </IonContent>
+
 
             <IonTabs>
 
@@ -38,6 +47,7 @@ const list: React.FC = () => {
                 </IonRouterOutlet>
 
                 <IonTabBar slot="bottom">
+
                     <IonTabButton tab="Ort und Zeit" href="/evdet">
                         <IonIcon name="time"/>
                         <IonLabel>Ort & Zeit</IonLabel>
@@ -53,7 +63,9 @@ const list: React.FC = () => {
                         <IonLabel>Liste</IonLabel>
                         <IonBadge>6</IonBadge>
                     </IonTabButton>
+
                 </IonTabBar>
+
             </IonTabs>
 
         </IonPage>

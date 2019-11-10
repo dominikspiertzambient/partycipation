@@ -18,7 +18,6 @@ import {
     IonToolbar,
 } from '@ionic/react';
 import React from 'react';
-import Home from "./Home";
 import {Route} from "react-router";
 
 const teil: React.FC = () => {
@@ -76,6 +75,7 @@ const teil: React.FC = () => {
                 </IonRouterOutlet>
 
                 <IonTabBar slot="bottom">
+
                     <IonTabButton tab="Ort und Zeit" href="/evdet">
                         <IonIcon name="time"/>
                         <IonLabel>Ort & Zeit</IonLabel>
@@ -87,11 +87,13 @@ const teil: React.FC = () => {
                     </IonTabButton>
 
                     <IonTabButton tab="Mitbringliste" href="/list">
-                        <IonIcon name="list" ></IonIcon>
+                        <IonIcon name="list"/>
                         <IonLabel>Liste</IonLabel>
                         <IonBadge>6</IonBadge>
                     </IonTabButton>
+
                 </IonTabBar>
+
             </IonTabs>
 
         </IonPage>

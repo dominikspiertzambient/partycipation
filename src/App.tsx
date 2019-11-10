@@ -2,11 +2,10 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import {Home} from './pages/Home';
+import {Home} from './pages/Home/Home';
 import evdet from './pages/Eventdetails';
 import teil from './pages/Teilnehmer';
 import list from './pages/Mitbringliste';
-
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,6 +25,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import {Card} from "./pages/Home/Card/Card";
 
 const App: React.FC = () => (
   <IonApp>
@@ -36,6 +36,7 @@ const App: React.FC = () => (
         <Route path="/evdet" component={evdet} exact={true} />
         <Route path="/list" component={list} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
+        <Route path="/Card" component={Card} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

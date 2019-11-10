@@ -1,7 +1,11 @@
 import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
+import {StorageContext} from '../provider/Storage/Storage';
 
-export const Home: FC = () => ( // return
+export const Home: FC = () => {
+  const {participants} = useContext(StorageContext);
+
+  return ( // return
     <IonPage>
         <IonHeader>
             <IonToolbar>
@@ -17,6 +21,10 @@ export const Home: FC = () => ( // return
                 </a>{' '}
                 will be your guide.
             </p>
+          {participants && participants.length > 0 && participants.map(
+            (participant: any) => <p key={participant.id}>{participant.name}</p>
+          )}
         </IonContent>
     </IonPage>
-);
+  )
+};

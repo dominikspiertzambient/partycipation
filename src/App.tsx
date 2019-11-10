@@ -18,7 +18,7 @@ export const App: FC = () => (
           <Route exact path="/" render={() => <Redirect to="/home" />} />
           <Route path="/events/:id/details/participants" component={Teil} />
           <Route path="/events/:id/details" component={Evdet} />
-          <Route path="/list" component={List} exact={true} />
+          <Route path="/events/:id/details/list" component={List} exact={true} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>

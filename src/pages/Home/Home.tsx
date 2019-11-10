@@ -1,4 +1,4 @@
-import {IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import React, {FC, useContext} from 'react';
 import {StorageContext} from '../../provider/Storage/Storage';
 import {Card} from './Card/Card';

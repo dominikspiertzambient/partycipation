@@ -1,16 +1,14 @@
 import {
-    IonAvatar,
     IonBadge,
-    IonButton, IonCard, IonChip,
-    IonCol,
+    IonChip,
     IonContent,
-    IonGrid,
     IonHeader,
-    IonIcon, IonItem,
-    IonLabel, IonList,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
     IonPage,
     IonRouterOutlet,
-    IonRow, IonTab,
     IonTabBar,
     IonTabButton,
     IonTabs,
@@ -19,11 +17,10 @@ import {
 } from '@ionic/react';
 import React, {useContext} from 'react';
 
-import {Route} from "react-router";
-import {StorageContext} from "../provider/Storage/Storage";
+import {RouteComponentProps, withRouter} from 'react-router';
+import {StorageContext} from '../provider/Storage/Storage';
 
-export const List: React.FC = () => {
-
+const List_: React.FC<RouteComponentProps<any>> = ({match: {params}}) => {
     const {items} = useContext(StorageContext);
 
     return (
@@ -62,25 +59,23 @@ export const List: React.FC = () => {
                 <IonRouterOutlet>
                 </IonRouterOutlet>
 
-                <IonTabBar slot="bottom">
+                    <IonTabBar slot="bottom">
+                        <IonTabButton tab="Ort und Zeit" href={`/events/${params.id}/details`}>
+                            <IonIcon name="time"/>
+                            <IonLabel>Ort & Zeit</IonLabel>
+                        </IonTabButton>
 
-                    <IonTabButton tab="Ort und Zeit" href="details">
-                        <IonIcon name="time"/>
-                        <IonLabel>Ort & Zeit</IonLabel>
-                    </IonTabButton>
+                        <IonTabButton tab="Teilnehmer" href={`/events/${params.id}/details/participants`}>
+                            <IonIcon name="person"/>
+                            <IonLabel>Teilnehmer</IonLabel>
+                        </IonTabButton>
 
-                    <IonTabButton tab="Teilnehmer" href="details/participants">
-                        <IonIcon name="person"/>
-                        <IonLabel>Teilnehmer</IonLabel>
-                    </IonTabButton>
-
-                    <IonTabButton tab="Mitbringliste" href="/list">
-                        <IonIcon name="list"/>
-                        <IonLabel>Liste</IonLabel>
-                        <IonBadge>6</IonBadge>
-                    </IonTabButton>
-
-                </IonTabBar>
+                        <IonTabButton tab="Mitbringliste" href={`/events/${params.id}/details/list`}>
+                            <IonIcon name="list"/>
+                            <IonLabel>Liste</IonLabel>
+                            <IonBadge>6</IonBadge>
+                        </IonTabButton>
+                    </IonTabBar>
 
             </IonTabs>
 
@@ -88,3 +83,4 @@ export const List: React.FC = () => {
     );
 };
 
+export const List = withRouter(List_);

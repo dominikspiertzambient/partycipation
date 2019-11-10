@@ -17,8 +17,8 @@ import {
     IonToolbar,
 } from '@ionic/react';
 import React, {FC, useContext} from 'react';
-import {RouteComponentProps, withRouter} from "react-router";
-import {StorageContext} from "../provider/Storage/Storage";
+import {RouteComponentProps, withRouter} from 'react-router';
+import {StorageContext} from '../provider/Storage/Storage';
 
 export const Teil_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
 
@@ -64,25 +64,23 @@ export const Teil_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
                 <IonRouterOutlet>
                 </IonRouterOutlet>
 
-                <IonTabBar slot="bottom">
+                    <IonTabBar slot="bottom">
+                        <IonTabButton tab="Ort und Zeit" href={`/events/${params.id}/details`}>
+                            <IonIcon name="time"/>
+                            <IonLabel>Ort & Zeit</IonLabel>
+                        </IonTabButton>
 
-                    <IonTabButton tab="Ort und Zeit" href="/evdet">
-                        <IonIcon name="time"/>
-                        <IonLabel>Ort & Zeit</IonLabel>
-                    </IonTabButton>
+                        <IonTabButton tab="Teilnehmer" href={`/events/${params.id}/details/participants`}>
+                            <IonIcon name="person"/>
+                            <IonLabel>Teilnehmer</IonLabel>
+                        </IonTabButton>
 
-                    <IonTabButton tab="Teilnehmer" href="details/participants">
-                        <IonIcon name="person"/>
-                        <IonLabel>Teilnehmer</IonLabel>
-                    </IonTabButton>
-
-                    <IonTabButton tab="Mitbringliste" href="/list">
-                        <IonIcon name="list"/>
-                        <IonLabel>Liste</IonLabel>
-                        <IonBadge>6</IonBadge>
-                    </IonTabButton>
-
-                </IonTabBar>
+                        <IonTabButton tab="Mitbringliste" href={`/events/${params.id}/details/list`}>
+                            <IonIcon name="list"/>
+                            <IonLabel>Liste</IonLabel>
+                            <IonBadge>6</IonBadge>
+                        </IonTabButton>
+                    </IonTabBar>
 
             </IonTabs>
 

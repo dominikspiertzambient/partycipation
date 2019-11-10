@@ -60,18 +60,17 @@ const Evdet_: FC<RouteComponentProps<any>> = ({match: {params}}) => {
                     </IonRouterOutlet>
 
                     <IonTabBar slot="bottom">
-
-                        <IonTabButton tab="Ort und Zeit" href="/evdet">
+                        <IonTabButton tab="Ort und Zeit" href={`/events/${params.id}/details`}>
                             <IonIcon name="time"/>
                             <IonLabel>Ort & Zeit</IonLabel>
                         </IonTabButton>
 
-                        <IonTabButton tab="Teilnehmer" href="details/participants">
+                        <IonTabButton tab="Teilnehmer" href={`/events/${params.id}/details/participants`}>
                             <IonIcon name="person"/>
                             <IonLabel>Teilnehmer</IonLabel>
                         </IonTabButton>
 
-                        <IonTabButton tab="Mitbringliste" href="/list">
+                        <IonTabButton tab="Mitbringliste" href={`/events/${params.id}/details/list`}>
                             <IonIcon name="list"/>
                             <IonLabel>Liste</IonLabel>
                             <IonBadge>6</IonBadge>

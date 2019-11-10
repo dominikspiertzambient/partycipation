@@ -28,7 +28,7 @@ export const CreateEvent_: FC<RouteComponentProps> = ({history}) => {
         <IonButton
           onClick={e => {
             e.preventDefault();
-            history.push("/event/add2");
+            history.push("/event/add3");
           }}>
           Zur zweiten Seite
         </IonButton>

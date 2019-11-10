@@ -1,21 +1,17 @@
 import React, {FC} from 'react';
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon} from '@ionic/react';
+import {IonContent, IonHeader, IonPage, IonTextarea,IonInput, IonItem, IonLabel} from '@ionic/react';
 import {RouteComponentProps, withRouter} from "react-router";
+import {Link} from "react-router-dom";
 
 const _CreateList: FC<RouteComponentProps> = ({history}) => (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Was braucst du noch?</IonTitle>
-        </IonToolbar>
+        <h1>Liste</h1>
       </IonHeader>
       <IonContent>
-          {/*-- fab placed to the top end --*/}
-          <IonFab vertical="top" horizontal="end" slot="fixed">
-            <IonFabButton>
-              <IonIcon name="add" />
-            </IonFabButton>
-          </IonFab>
+          <IonTextarea>Mitbringliste↓</IonTextarea>
+        <p> z.B Cola↑</p>
+        <Link to="/home">Beenden und Speichern</Link>
       </IonContent>
     </IonPage>);
 export const CreateList = withRouter(_CreateList);

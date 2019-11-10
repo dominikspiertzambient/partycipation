@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonImg} from '@ionic/react';
+import {IonCard, IonCardContent, IonCardSubtitle, IonCardTitle} from '@ionic/react';
 
 export const Card: FC<any> = (props) => (
     <IonCard className="box" onClick={props.onClick}>
